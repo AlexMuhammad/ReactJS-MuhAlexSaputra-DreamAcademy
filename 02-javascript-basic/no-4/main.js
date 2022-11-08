@@ -24,10 +24,15 @@ function checkUsia(usia, n){
     }
 }
 
-console.log('Anda adalah seorang', checkUsia(0, checkValidasi));
-console.log('Anda adalah seorang', checkUsia(10, checkValidasi));
-console.log('Anda adalah seorang', checkUsia('50', checkValidasi));
-console.log('Anda adalah seorang', checkUsia(60, checkValidasi));
-console.log('Anda adalah seorang', checkUsia(29.5, checkValidasi));
-console.log('Anda adalah seorang', checkUsia('muda', checkValidasi));
-console.log('Anda adalah seorang', checkUsia(true, checkValidasi));
+let showResult = [0, 10, '50', 60, 29.5, 'muda', true]
+showResult.forEach(function (val) {
+    console.log('Anda adalah seorang', checkUsia(val, checkValidasi));
+})
+
+// console.log('Anda adalah seorang', checkUsia(0, checkValidasi));
+// console.log('Anda adalah seorang', checkUsia(10, checkValidasi));
+// console.log('Anda adalah seorang', checkUsia('50', checkValidasi));
+// console.log('Anda adalah seorang', checkUsia(60, checkValidasi));
+// console.log('Anda adalah seorang', checkUsia(29.5, checkValidasi));
+// console.log('Anda adalah seorang', checkUsia('muda', checkValidasi));
+// console.log('Anda adalah seorang', checkUsia(true, checkValidasi));

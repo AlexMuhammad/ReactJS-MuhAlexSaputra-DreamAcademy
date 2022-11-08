@@ -14,14 +14,11 @@ function factorial(number, n){
     for(let i = 1; i <= number; i++){
         result *= i
     }
-    console.log(result)
+    return result;
 }
 
-console.log(factorial(10, checkValid));
-console.log(factorial(13, checkValid));
-console.log(factorial(0, checkValid));
-console.log(factorial(-5, checkValid));
-console.log(factorial('oke', checkValid));
-console.log(factorial('10', checkValid));
-console.log(factorial('6', checkValid));
-console.log(factorial(true, checkValid));
+let showResult = [10, 13, 0, -5, 'oke', '10', '6', true];
+
+showResult.forEach(function (val) {
+    console.log(factorial(val, checkValid));
+})
