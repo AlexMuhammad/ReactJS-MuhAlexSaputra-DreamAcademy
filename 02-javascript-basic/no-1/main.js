@@ -11,5 +11,5 @@ function checkNameLength(name) {
 let showResult = ["John Due", "Sri Sultan Hamengkubuwono I", 10, true];
 
 showResult.forEach(function (val) {
-    console.log(val);
+    console.log(checkNameLength(val));
 })
