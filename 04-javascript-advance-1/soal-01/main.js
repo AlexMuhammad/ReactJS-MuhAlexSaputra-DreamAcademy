@@ -1,7 +1,7 @@
 const btn = document.querySelector("button");
 const date = new Date();
 const day = date.getDate();
-const month = date.getMonth();
+const month = date.getMonth() + 1;
 const year = date.getFullYear();
 const monthName = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 
