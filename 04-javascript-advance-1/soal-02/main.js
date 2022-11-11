@@ -21,8 +21,8 @@ function infoNative() {
     const year = ageConvert.getFullYear();
     const age = Math.abs(year - 1970);
 
-    console.log(nama.value + " Age is " + age + " years");
-    console.log(birthdayLeft < 0 ? `${birthdayLeft} yang lalu` : `${birthdayLeft} lagi`);
+    const note = birthdayLeft < 0 ? `${birthdayLeft} hari  yang lalu` : `${birthdayLeft} hari lagi`;
+    console.log(`Halo, ${nama.value} Usia anda adalah ${age} tahun. Anda Berulang tahun ${note} `);
   }
 }
 
@@ -39,7 +39,7 @@ function infomoment() {
   if (birthday == "null" || birthday == "") {
     return false;
   } else {
-    console.log(nama.value + " Age is " + age + " years");
-    console.log(birthdayLeft < 0 ? `${birthdayLeft} yang lalu` : `${birthdayLeft} lagi`);
+    const note = birthdayLeft < 0 ? `${birthdayLeft} hari  yang lalu` : `${birthdayLeft} hari lagi`;
+    console.log(`Halo, ${nama.value} Usia anda adalah ${age} tahun. Anda Berulang tahun ${note} `);
   }
 }
