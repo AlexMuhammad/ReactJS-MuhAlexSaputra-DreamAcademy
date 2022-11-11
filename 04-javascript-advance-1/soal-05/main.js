@@ -1,14 +1,23 @@
-const btn = document.querySelector('button');
-const input = document.querySelector('input');
+const checkValid = function (text) {
+  const textValid = new RegExp(/([a-z])/i);
 
-btn.addEventListener('click', function () {
-    const letters = /^[A-Za-z]+$/;
-    if (input.value.match(letters)) {
-        alert('Mantap')
-        return true
-    }
-    else {
-        alert('gagal')
-        return false
-    }
-})
+  return textValid.test(text);
+};
+
+const checkVokal = function (text) {
+  const vocal = ["a", "i", "u", "e", "o"];
+
+  return vocal.includes(text) ? "vokal" : "konsonan";
+};
+
+const wordContainer = ["mempertanggungjawabkan", "merdeka", "100", ""];
+wordContainer.map(function (text) {
+  const test = text
+    .toLowerCase()
+    .split("")
+    .map(function (text) {
+      const check = checkValid(text);
+      return check ? checkVokal(text) : "invalid";
+    });
+  console.log(test.toString());
+});
