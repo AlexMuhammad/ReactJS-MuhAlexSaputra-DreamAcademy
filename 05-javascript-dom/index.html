@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TodoList</title>
+    <style>
+        .checked{
+            color: red;
+        }
+        .unchecked{
+            color: blue;
+        }
+    </style>
+  </head>
+  <body>
+    <h1>Todolist</h1>
+    <form action="" id="myForm">
+      <input type="text" id="inputData" />
+      <input type="checkbox" id="checkStatus" />
+      <button>add</button>
+    </form>
+    <br /><br />
+    <table border="1px" id="table-todo">
+      <thead>
+        <tr>
+          <th>No</th>
+          <th>Judul</th>
+          <th>Status</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody id="body-table">
+
+      </tbody>
+    </table>
+    <script src="./main.js"></script>
+  </body>
+</html>
