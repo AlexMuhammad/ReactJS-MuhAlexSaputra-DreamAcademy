@@ -36,13 +36,26 @@ todo.map((val, i) => {
 
 myForm.addEventListener("submit", (e) => {
   e.preventDefault();
+  console.log(myForm["inputData"].value);
+  if (myForm["nomor"].value) {
+    const data = {
+      id: myForm["nomor"].value,
+      judul: inputData.value,
+      status: (checkStatus.checked = check()),
+    };
+    const todoIndex = todo.findIndex((index) => {
+      return index.id == data.id;
+    });
+    todo[todoIndex] = data;
+  } else {
+    const data = {
+      id: +new Date().getTime(),
+      judul: inputData.value,
+      status: (checkStatus.checked = check()),
+    };
+    todo.push(data);
+  }
   tBody.innerHTML = "";
-  const data = {
-    id: +new Date().getTime(),
-    judul: inputData.value,
-    status: (checkStatus.checked = check()),
-  };
-  todo.push(data);
   localStorage.setItem("todos", JSON.stringify(todo));
   inputData.value = "";
   location.reload();
@@ -58,8 +71,15 @@ Array.from(deleteBtn).map((arg) => {
   });
 });
 
-const editBtn = document.querySelectorAll('.edit');
+const editBtn = document.querySelectorAll(".edit");
+const nomor = document.querySelector("#nomor");
 Array.from(editBtn).map((arg) => {
-    arg.addEventListener('click', (e) => {
-    })
-})
+  arg.addEventListener("click", (e) => {
+    const updateTodo = todo.find((td) => {
+      return td.id == e.target.id;
+    });
+    inputData.value = updateTodo.judul;
+    checkStatus.checked = updateTodo.status;
+    nomor.value = updateTodo.id;
+  });
+});
