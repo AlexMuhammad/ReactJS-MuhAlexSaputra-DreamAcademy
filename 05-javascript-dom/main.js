@@ -22,7 +22,6 @@ todo.map((val, i) => {
       td.innerHTML = val[arg];
     }
     el.appendChild(td);
-    console.log(el);
     check();
   });
   const td = document.createElement("td");
@@ -36,7 +35,6 @@ todo.map((val, i) => {
 
 myForm.addEventListener("submit", (e) => {
   e.preventDefault();
-  console.log(myForm["inputData"].value);
   if (myForm["nomor"].value) {
     const data = {
       id: myForm["nomor"].value,
